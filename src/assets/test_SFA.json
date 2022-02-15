@@ -1,0 +1,866 @@
+{
+    "currentStep": 0,
+    "steps": [{
+        "name": "豆浆",
+        "image": "local-resource:///Users/zhanghexin/aphasia_viz/src/assets/test_images/豆浆.jpg",
+        "countdown": 20,
+        "result": "fail",
+        "status": "unchecked",
+        "response": "",
+        "tab": [{
+            "feature_type": "可以-",
+            "dataSource": [{
+                "key": 0,
+                "name": "可以-解渴",
+                "cue_validity": "0.022",
+                "related_concepts": "白水, 白粥, 百事可乐, 冰棍, 冰红茶",
+                "confused_feature": "饱腹, 调味, 送礼, 冲泡, 食用",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "可以-饮用",
+                "cue_validity": "0.017",
+                "related_concepts": "八宝粥, 白饭, 白酒, 白水, 白糖",
+                "confused_feature": "饱腹, 炒, 调味, 送礼, 冲泡",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "可以-买卖",
+                "cue_validity": "0.001",
+                "related_concepts": "白砂糖, 百事可乐, 棒棒糖, 包子, 爆米花",
+                "confused_feature": "饱腹, 炒, 调味, 送礼, 冲泡",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "是-",
+            "dataSource": [{
+                "key": 0,
+                "name": "是-早上的",
+                "cue_validity": "0.166",
+                "related_concepts": "八宝粥, 白粥, 春卷, 豆腐脑, 馄饨",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 面食",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "是-早餐",
+                "cue_validity": "0.118",
+                "related_concepts": "八宝粥, 白粥, 包子, 春卷, 蛋糕",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 面食",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "是-豆制品",
+                "cue_validity": "0.103",
+                "related_concepts": "臭豆腐, 豆豉, 豆腐, 豆腐干, 豆腐脑",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 能量",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "是-乳白色的",
+                "cue_validity": "0.097",
+                "related_concepts": "豆奶, 牦牛奶, 奶粉, 奶油, 牛奶",
+                "confused_feature": "好吃的, 黄色的, 能量, 粉末, 好喝的",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "是-液体",
+                "cue_validity": "0.024",
+                "related_concepts": "白酒, 白水, 百事可乐, 冰红茶, 冰咖啡",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 能量",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "是-饮料",
+                "cue_validity": "0.024",
+                "related_concepts": "白酒, 百事可乐, 冰红茶, 冰咖啡, 菠萝汁",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 能量",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "是-粘稠的",
+                "cue_validity": "0.022",
+                "related_concepts": "白粥, 菜籽油, 番茄酱, 蜂蜜, 羹汤",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 红色的",
+                "status": "NO"
+            }, {
+                "key": 7,
+                "name": "是-白色的",
+                "cue_validity": "0.008",
+                "related_concepts": "白饭, 白酒, 白砂糖, 白糖, 白粥",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 能量",
+                "status": "NO"
+            }, {
+                "key": 8,
+                "name": "是-甜的",
+                "cue_validity": "0.003",
+                "related_concepts": "白饭, 白砂糖, 白糖, 百事可乐, 棒棒糖",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 能量",
+                "status": "NO"
+            }, {
+                "key": 9,
+                "name": "是-香的",
+                "cue_validity": "0.002",
+                "related_concepts": "白饭, 白酒, 包子, 爆米花, 比萨",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 能量",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "其他-",
+            "dataSource": []
+        }, {
+            "feature_type": "需要-",
+            "dataSource": [{
+                "key": 0,
+                "name": "需要-过滤",
+                "cue_validity": "1.000",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "需要-研磨",
+                "cue_validity": "0.053",
+                "related_concepts": "豆奶, 黑胡椒, 胡椒, 咖啡, 咖啡豆",
+                "confused_feature": "保存, 水, 烹饪, 密封, 烘烤",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "需要-榨",
+                "cue_validity": "0.043",
+                "related_concepts": "菠萝汁, 菜籽油, 橙汁, 豆奶, 果汁",
+                "confused_feature": "保存, 水, 冷藏, 密封, 发酵",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "需要-消毒",
+                "cue_validity": "0.026",
+                "related_concepts": "牛奶, 瓶装水, 水, 酸奶",
+                "confused_feature": "保存, 水, 冷藏, 密封, 发酵",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "需要-加热",
+                "cue_validity": "0.022",
+                "related_concepts": "八宝粥, 比萨, 炒面, 臭豆腐, 大饼",
+                "confused_feature": "保存, 水, 冷藏, 烹饪, 密封",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "需要-煮",
+                "cue_validity": "0.014",
+                "related_concepts": "鹌鹑蛋, 八宝粥, 白饭, 白粥, 包子",
+                "confused_feature": "保存, 水, 冷藏, 烹饪, 密封",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "需要-制造",
+                "cue_validity": "0.001",
+                "related_concepts": "白酒, 白砂糖, 白糖, 白粥, 百事可乐",
+                "confused_feature": "保存, 水, 冷藏, 烹饪, 密封",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "像-",
+            "dataSource": [{
+                "key": 0,
+                "name": "像-豆奶",
+                "cue_validity": "0.600",
+                "related_concepts": "全脂牛奶",
+                "confused_feature": "豆浆, 奶茶, 面粉, 酸奶, 脱脂牛奶",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "像-牛奶",
+                "cue_validity": "0.317",
+                "related_concepts": "白粥, 豆奶, 奶粉, 清汤, 沙拉酱",
+                "confused_feature": "水, 豆浆, 雪, 血液, 气泡水",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "有-",
+            "dataSource": [{
+                "key": 0,
+                "name": "有-黄豆",
+                "cue_validity": "0.206",
+                "related_concepts": "臭豆腐, 豆豉, 豆腐脑, 豆奶, 酱油",
+                "confused_feature": "多种种类, 油, 面粉, 调料, 多种品牌",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "有-大豆",
+                "cue_validity": "0.170",
+                "related_concepts": "八宝粥, 豆腐, 豆奶, 谷物, 酱油",
+                "confused_feature": "多种种类, 多种品牌, 盐, 酱料, 壳",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "有-豆子",
+                "cue_validity": "0.062",
+                "related_concepts": "豆豉, 豆腐, 豆腐干, 豆奶, 粥",
+                "confused_feature": "多种种类, 多种味道, 调料, 包装, 多种样式",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "有-蛋白质",
+                "cue_validity": "0.026",
+                "related_concepts": "鹌鹑蛋, 八宝粥, 布丁, 蛋黄, 蛋卷",
+                "confused_feature": "多种种类, 多种味道, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "有-糖",
+                "cue_validity": "0.017",
+                "related_concepts": "白酒, 白砂糖, 白糖, 百事可乐, 棒棒糖",
+                "confused_feature": "多种种类, 多种味道, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "有-水",
+                "cue_validity": "0.014",
+                "related_concepts": "八宝粥, 白饭, 白酒, 白水, 白粥",
+                "confused_feature": "多种种类, 多种味道, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "有-营养",
+                "cue_validity": "0.013",
+                "related_concepts": "鹌鹑蛋, 八宝粥, 白饭, 白糖, 白粥",
+                "confused_feature": "多种种类, 多种味道, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 7,
+                "name": "有-维生素",
+                "cue_validity": "0.007",
+                "related_concepts": "菠萝汁, 橙汁, 番茄酱, 干果, 果汁",
+                "confused_feature": "多种种类, 多种味道, 脂肪, 油, 多种品牌",
+                "status": "NO"
+            }, {
+                "key": 8,
+                "name": "有-味道",
+                "cue_validity": "0.004",
+                "related_concepts": "白酒, 白砂糖, 白糖, 碧螺春, 冰红茶",
+                "confused_feature": "多种种类, 多种味道, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 9,
+                "name": "有-多种颜色",
+                "cue_validity": "0.002",
+                "related_concepts": "棒棒糖, 冰棍, 冰淇淋, 橙汁, 醋",
+                "confused_feature": "多种种类, 多种味道, 脂肪, 油, 面粉",
+                "status": "NO"
+            }]
+        }]
+    }, {
+        "name": "菠萝汁",
+        "image": "local-resource:///Users/zhanghexin/aphasia_viz/src/assets/test_images/菠萝汁.jpg",
+        "countdown": 20,
+        "result": "fail",
+        "status": "unchecked",
+        "response": "",
+        "tab": [{
+            "feature_type": "可以-",
+            "dataSource": [{
+                "key": 0,
+                "name": "可以-解渴",
+                "cue_validity": "0.024",
+                "related_concepts": "白水, 白粥, 百事可乐, 冰棍, 冰红茶",
+                "confused_feature": "饱腹, 调味, 送礼, 冲泡, 食用",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "可以-饮用",
+                "cue_validity": "0.022",
+                "related_concepts": "八宝粥, 白饭, 白酒, 白水, 白糖",
+                "confused_feature": "饱腹, 炒, 调味, 送礼, 冲泡",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "可以-买卖",
+                "cue_validity": "0.001",
+                "related_concepts": "白砂糖, 百事可乐, 棒棒糖, 包子, 爆米花",
+                "confused_feature": "饱腹, 炒, 调味, 送礼, 冲泡",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "是-",
+            "dataSource": [{
+                "key": 0,
+                "name": "是-汁水",
+                "cue_validity": "1.000",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "是-果味的",
+                "cue_validity": "1.000",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "是-水果汁",
+                "cue_validity": "0.600",
+                "related_concepts": "苹果汁",
+                "confused_feature": "瓶装的, 健康的, 苹果味的, 苹果榨成的汁",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "是-果汁",
+                "cue_validity": "0.252",
+                "related_concepts": "橙汁, 橘子汽水, 苹果汁, 葡萄汁",
+                "confused_feature": "食物, 好吃的, 能量, 红色的, 水",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "是-饮品",
+                "cue_validity": "0.139",
+                "related_concepts": "百事可乐, 冰棍, 冰淇淋",
+                "confused_feature": "食物, 好吃的, 白色的, 零食, 黑色的",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "是-好喝的",
+                "cue_validity": "0.074",
+                "related_concepts": "百事可乐, 橙汁, 蜂蜜, 果汁, 可口可乐",
+                "confused_feature": "食物, 香的, 好吃的, 白色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "是-饮料",
+                "cue_validity": "0.029",
+                "related_concepts": "白酒, 百事可乐, 冰红茶, 冰咖啡, 茶",
+                "confused_feature": "食物, 香的, 好吃的, 白色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 7,
+                "name": "是-酸的",
+                "cue_validity": "0.026",
+                "related_concepts": "冰红茶, 冰糖葫芦, 草莓酱, 橙汁, 醋",
+                "confused_feature": "食物, 香的, 好吃的, 白色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 8,
+                "name": "是-甜的",
+                "cue_validity": "0.008",
+                "related_concepts": "白饭, 白砂糖, 白糖, 百事可乐, 棒棒糖",
+                "confused_feature": "食物, 香的, 好吃的, 白色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 9,
+                "name": "是-液体",
+                "cue_validity": "0.008",
+                "related_concepts": "白酒, 白水, 百事可乐, 冰红茶, 冰咖啡",
+                "confused_feature": "食物, 香的, 好吃的, 白色的, 零食",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "其他-",
+            "dataSource": []
+        }, {
+            "feature_type": "需要-",
+            "dataSource": [{
+                "key": 0,
+                "name": "需要-菠萝",
+                "cue_validity": "1.000",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "需要-调配",
+                "cue_validity": "0.492",
+                "related_concepts": "奶茶",
+                "confused_feature": "调制, 原材料, 吸管",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "需要-新鲜",
+                "cue_validity": "0.492",
+                "related_concepts": "生鱼片",
+                "confused_feature": "烹饪, 腌制, 切, 保鲜, 清洗",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "需要-榨汁机",
+                "cue_validity": "0.291",
+                "related_concepts": "橙汁, 果汁, 苹果汁, 葡萄汁",
+                "confused_feature": "保存, 保鲜, 低温, 酿, 杯子",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "需要-榨",
+                "cue_validity": "0.151",
+                "related_concepts": "菜籽油, 橙汁, 豆浆, 豆奶, 果汁",
+                "confused_feature": "保存, 煮, 加热, 密封, 发酵",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "需要-保质",
+                "cue_validity": "0.040",
+                "related_concepts": "冰红茶, 饼干, 草莓酱, 蛋卷, 糕点",
+                "confused_feature": "保存, 煮, 烹饪, 密封, 烘烤",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "需要-加工",
+                "cue_validity": "0.031",
+                "related_concepts": "白饭, 白糖, 冰红茶, 冰淇淋蛋糕, 菜籽油",
+                "confused_feature": "保存, 煮, 烹饪, 密封, 加热",
+                "status": "NO"
+            }, {
+                "key": 7,
+                "name": "需要-冷藏",
+                "cue_validity": "0.008",
+                "related_concepts": "百事可乐, 冰棍, 冰咖啡, 冰淇淋, 冰淇淋蛋糕",
+                "confused_feature": "保存, 煮, 烹饪, 密封, 加热",
+                "status": "NO"
+            }, {
+                "key": 8,
+                "name": "需要-制造",
+                "cue_validity": "0.001",
+                "related_concepts": "白酒, 白砂糖, 白糖, 白粥, 百事可乐",
+                "confused_feature": "保存, 煮, 烹饪, 加热, 密封",
+                "status": "NO"
+            }, {
+                "key": 9,
+                "name": "需要-水",
+                "cue_validity": "0.001",
+                "related_concepts": "鹌鹑蛋, 八宝粥, 白饭, 白酒, 白水",
+                "confused_feature": "保存, 煮, 烹饪, 加热, 密封",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "像-",
+            "dataSource": [{
+                "key": 0,
+                "name": "像-芒果汁",
+                "cue_validity": "0.714",
+                "related_concepts": "苹果汁",
+                "confused_feature": "可乐, 酒, 蜂蜜, 葡萄汁, 醋",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "像-橙汁",
+                "cue_validity": "0.384",
+                "related_concepts": "橘子汽水, 柠檬水, 葡萄汁",
+                "confused_feature": "可乐, 气泡水, 雪碧, 葡萄酒, 红酒",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "像-苹果汁",
+                "cue_validity": "0.279",
+                "related_concepts": "橙汁, 葡萄汁",
+                "confused_feature": "气泡水, 葡萄汁, 葡萄酒, 红酒, 橘子汁",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "像-啤酒",
+                "cue_validity": "0.137",
+                "related_concepts": "白酒, 汽水, 香槟",
+                "confused_feature": "可乐, 酒, 白水, 苏打水, 喷泉",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "像-水",
+                "cue_validity": "0.044",
+                "related_concepts": "白酒, 白水, 白粥, 冰红茶, 菜籽油",
+                "confused_feature": "豆浆, 可乐, 雪, 血液, 牛奶",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "有-",
+            "dataSource": [{
+                "key": 0,
+                "name": "有-颜色",
+                "cue_validity": "0.055",
+                "related_concepts": "鹌鹑蛋, 白砂糖, 白糖, 百事可乐, 棒棒糖",
+                "confused_feature": "多种颜色, 多种味道, 蛋白质, 脂肪, 油",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "有-维生素C",
+                "cue_validity": "0.043",
+                "related_concepts": "橙汁, 果汁, 柠檬水, 苹果汁",
+                "confused_feature": "多种颜色, 多种味道, 添加剂, 色素, 柠檬",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "有-维生素",
+                "cue_validity": "0.028",
+                "related_concepts": "橙汁, 豆浆, 番茄酱, 干果, 果汁",
+                "confused_feature": "多种颜色, 多种味道, 蛋白质, 脂肪, 油",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "有-糖",
+                "cue_validity": "0.015",
+                "related_concepts": "白酒, 白砂糖, 白糖, 百事可乐, 棒棒糖",
+                "confused_feature": "多种颜色, 多种味道, 蛋白质, 脂肪, 油",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "有-水",
+                "cue_validity": "0.014",
+                "related_concepts": "八宝粥, 白饭, 白酒, 白水, 白粥",
+                "confused_feature": "多种颜色, 多种味道, 蛋白质, 脂肪, 油",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "有-味道",
+                "cue_validity": "0.010",
+                "related_concepts": "白酒, 白砂糖, 白糖, 碧螺春, 冰红茶",
+                "confused_feature": "多种颜色, 多种味道, 蛋白质, 脂肪, 油",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "有-营养",
+                "cue_validity": "0.005",
+                "related_concepts": "鹌鹑蛋, 八宝粥, 白饭, 白糖, 白粥",
+                "confused_feature": "多种颜色, 多种味道, 蛋白质, 脂肪, 油",
+                "status": "NO"
+            }, {
+                "key": 7,
+                "name": "有-果肉",
+                "cue_validity": "0.003",
+                "related_concepts": "草莓酱, 橙汁, 干果, 果冻, 果酱",
+                "confused_feature": "多种颜色, 多种味道, 蛋白质, 脂肪, 油",
+                "status": "NO"
+            }, {
+                "key": 8,
+                "name": "有-多种种类",
+                "cue_validity": "0.001",
+                "related_concepts": "白酒, 包子, 比萨, 冰淇淋, 冰糖葫芦",
+                "confused_feature": "多种颜色, 多种味道, 蛋白质, 脂肪, 油",
+                "status": "NO"
+            }]
+        }]
+    }, {
+        "name": "咖啡",
+        "image": "local-resource:///Users/zhanghexin/aphasia_viz/src/assets/test_images/咖啡.jpg",
+        "countdown": 20,
+        "result": "fail",
+        "status": "unchecked",
+        "response": "",
+        "tab": [{
+            "feature_type": "可以-",
+            "dataSource": [{
+                "key": 0,
+                "name": "可以-提神",
+                "cue_validity": "0.174",
+                "related_concepts": "冰红茶, 冰咖啡, 茶, 红茶, 咖啡豆",
+                "confused_feature": "食用, 减肥, 解暑, 过滤, 养生",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "可以-冲泡",
+                "cue_validity": "0.027",
+                "related_concepts": "白糖, 碧螺春, 茶, 茶包, 方便面",
+                "confused_feature": "饱腹, 炒, 调味, 食用, 减肥",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "可以-饮用",
+                "cue_validity": "0.018",
+                "related_concepts": "八宝粥, 白饭, 白酒, 白水, 白糖",
+                "confused_feature": "饱腹, 炒, 调味, 食用, 拌",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "可以-送礼",
+                "cue_validity": "0.011",
+                "related_concepts": "白酒, 棒棒糖, 冰淇淋蛋糕, 饼干, 蛋糕",
+                "confused_feature": "饱腹, 炒, 食用, 烤, 减肥",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "可以-解渴",
+                "cue_validity": "0.008",
+                "related_concepts": "白水, 白粥, 百事可乐, 冰棍, 冰红茶",
+                "confused_feature": "饱腹, 调味, 食用, 炒菜, 减肥",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "可以-买卖",
+                "cue_validity": "0.001",
+                "related_concepts": "白砂糖, 百事可乐, 棒棒糖, 包子, 爆米花",
+                "confused_feature": "饱腹, 炒, 调味, 食用, 烤",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "是-",
+            "dataSource": [{
+                "key": 0,
+                "name": "是-涩的",
+                "cue_validity": "0.492",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "是-苦的",
+                "cue_validity": "0.287",
+                "related_concepts": "冰咖啡, 茶, 红茶, 咖啡豆, 可可巧克力",
+                "confused_feature": "好吃的, 甜的, 白色的, 零食, 能量",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "是-饮料",
+                "cue_validity": "0.041",
+                "related_concepts": "白酒, 百事可乐, 冰红茶, 冰咖啡, 菠萝汁",
+                "confused_feature": "好吃的, 甜的, 白色的, 黄色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "是-热的",
+                "cue_validity": "0.032",
+                "related_concepts": "羹汤, 烤肉, 烤土豆, 清汤, 热狗",
+                "confused_feature": "好吃的, 黄色的, 零食, 咸的, 能量",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "是-种子",
+                "cue_validity": "0.025",
+                "related_concepts": "干果, 谷物, 花生, 花生米, 咖啡豆",
+                "confused_feature": "好吃的, 甜的, 白色的, 黄色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "是-棕色的",
+                "cue_validity": "0.025",
+                "related_concepts": "百事可乐, 冰红茶, 冰咖啡, 醋, 豆腐干",
+                "confused_feature": "好吃的, 甜的, 白色的, 黄色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "是-香的",
+                "cue_validity": "0.007",
+                "related_concepts": "白饭, 白酒, 包子, 爆米花, 比萨",
+                "confused_feature": "好吃的, 甜的, 白色的, 黄色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 7,
+                "name": "是-液体",
+                "cue_validity": "0.006",
+                "related_concepts": "白酒, 白水, 百事可乐, 冰红茶, 冰咖啡",
+                "confused_feature": "好吃的, 甜的, 白色的, 黄色的, 零食",
+                "status": "NO"
+            }, {
+                "key": 8,
+                "name": "是-黑色的",
+                "cue_validity": "0.003",
+                "related_concepts": "百事可乐, 冰咖啡, 臭豆腐, 醋, 豆豉",
+                "confused_feature": "好吃的, 甜的, 白色的, 零食, 咸的",
+                "status": "NO"
+            }, {
+                "key": 9,
+                "name": "是-植物",
+                "cue_validity": "0.001",
+                "related_concepts": "碧螺春, 茶, 大米, 谷物, 谷子",
+                "confused_feature": "好吃的, 白色的, 黄色的, 零食, 能量",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "其他-",
+            "dataSource": []
+        }, {
+            "feature_type": "需要-",
+            "dataSource": [{
+                "key": 0,
+                "name": "需要-咖啡豆",
+                "cue_validity": "1.000",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "需要-咖啡杯",
+                "cue_validity": "1.000",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "需要-研磨",
+                "cue_validity": "0.204",
+                "related_concepts": "豆浆, 豆奶, 黑胡椒, 胡椒, 咖啡豆",
+                "confused_feature": "保存, 水, 烹饪, 加热, 密封",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "需要-热水",
+                "cue_validity": "0.042",
+                "related_concepts": "碧螺春, 茶, 茶包, 方便面, 红茶",
+                "confused_feature": "保存, 水, 密封, 种植, 发酵",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "需要-烘烤",
+                "cue_validity": "0.009",
+                "related_concepts": "比萨, 冰淇淋蛋糕, 饼干, 大饼, 蛋糕",
+                "confused_feature": "保存, 水, 冷藏, 烹饪, 加热",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "需要-煮",
+                "cue_validity": "0.005",
+                "related_concepts": "鹌鹑蛋, 八宝粥, 白饭, 白粥, 包子",
+                "confused_feature": "保存, 水, 冷藏, 烹饪, 加热",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "需要-制造",
+                "cue_validity": "0.002",
+                "related_concepts": "白酒, 白砂糖, 白糖, 白粥, 百事可乐",
+                "confused_feature": "保存, 水, 冷藏, 烹饪, 加热",
+                "status": "NO"
+            }, {
+                "key": 7,
+                "name": "需要-土",
+                "cue_validity": "0.001",
+                "related_concepts": "谷物, 谷子, 黑胡椒, 红茶, 花生",
+                "confused_feature": "保存, 水, 种植, 发酵, 干燥",
+                "status": "NO"
+            }, {
+                "key": 8,
+                "name": "需要-空气",
+                "cue_validity": "0.001",
+                "related_concepts": "鹌鹑蛋, 碧螺春, 大米, 谷物, 谷子",
+                "confused_feature": "保存, 水, 烹饪, 密封, 种植",
+                "status": "NO"
+            }, {
+                "key": 9,
+                "name": "需要-阳光",
+                "cue_validity": "0.001",
+                "related_concepts": "碧螺春, 大米, 豆腐干, 干果, 谷物",
+                "confused_feature": "保存, 水, 冷藏, 烹饪, 密封",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "像-",
+            "dataSource": [{
+                "key": 0,
+                "name": "像-板蓝根",
+                "cue_validity": "1.000",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "像-可可",
+                "cue_validity": "1.000",
+                "related_concepts": "",
+                "confused_feature": "",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "像-茶",
+                "cue_validity": "0.600",
+                "related_concepts": "果汁",
+                "confused_feature": "可乐, 奶茶, 颜料",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "像-中药",
+                "cue_validity": "0.211",
+                "related_concepts": "百事可乐, 冰红茶, 冰咖啡, 醋, 可口可乐",
+                "confused_feature": "水, 可乐, 血液, 奶茶, 气泡水",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "像-墨水",
+                "cue_validity": "0.198",
+                "related_concepts": "酱油, 可口可乐",
+                "confused_feature": "气泡水, 雪碧, 醋, 油, 蚝油",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "像-巧克力",
+                "cue_validity": "0.148",
+                "related_concepts": "棒棒糖, 咖啡豆, 糖果",
+                "confused_feature": "石头, 球, 棉花糖, 糖, 黄豆",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "像-酱油",
+                "cue_validity": "0.094",
+                "related_concepts": "醋, 豆豉, 可口可乐",
+                "confused_feature": "石头, 水, 可乐, 气泡水, 酒",
+                "status": "NO"
+            }]
+        }, {
+            "feature_type": "有-",
+            "dataSource": [{
+                "key": 0,
+                "name": "有-咖啡粉",
+                "cue_validity": "0.500",
+                "related_concepts": "速溶咖啡",
+                "confused_feature": "脂肪, 包装, 包装袋",
+                "status": "NO"
+            }, {
+                "key": 1,
+                "name": "有-咖啡豆",
+                "cue_validity": "0.375",
+                "related_concepts": "冰咖啡",
+                "confused_feature": "冰, 咖啡",
+                "status": "NO"
+            }, {
+                "key": 2,
+                "name": "有-咖啡因",
+                "cue_validity": "0.208",
+                "related_concepts": "冰咖啡, 咖啡豆, 速溶咖啡",
+                "confused_feature": "营养, 脂肪, 包装, 皮, 多种型号",
+                "status": "NO"
+            }, {
+                "key": 3,
+                "name": "有-糖",
+                "cue_validity": "0.016",
+                "related_concepts": "白酒, 白砂糖, 白糖, 百事可乐, 棒棒糖",
+                "confused_feature": "营养, 蛋白质, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 4,
+                "name": "有-水",
+                "cue_validity": "0.013",
+                "related_concepts": "八宝粥, 白饭, 白酒, 白水, 白粥",
+                "confused_feature": "营养, 蛋白质, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 5,
+                "name": "有-多种味道",
+                "cue_validity": "0.007",
+                "related_concepts": "棒棒糖, 包子, 爆米花, 比萨, 冰棍",
+                "confused_feature": "营养, 蛋白质, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 6,
+                "name": "有-味道",
+                "cue_validity": "0.006",
+                "related_concepts": "白酒, 白砂糖, 白糖, 碧螺春, 冰红茶",
+                "confused_feature": "营养, 蛋白质, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 7,
+                "name": "有-多种品牌",
+                "cue_validity": "0.005",
+                "related_concepts": "百事可乐, 冰棍, 冰红茶, 冰咖啡, 饼干",
+                "confused_feature": "营养, 蛋白质, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 8,
+                "name": "有-多种种类",
+                "cue_validity": "0.002",
+                "related_concepts": "白酒, 包子, 比萨, 冰淇淋, 冰糖葫芦",
+                "confused_feature": "营养, 蛋白质, 脂肪, 油, 面粉",
+                "status": "NO"
+            }, {
+                "key": 9,
+                "name": "有-多种颜色",
+                "cue_validity": "0.001",
+                "related_concepts": "棒棒糖, 冰棍, 冰淇淋, 橙汁, 醋",
+                "confused_feature": "营养, 蛋白质, 脂肪, 油, 面粉",
+                "status": "NO"
+            }]
+        }]
+    }]
+}
