@@ -52,18 +52,23 @@
               <a-space direction="vertical">
                 <a-image
                   :src="steps[currentStep].image"
-                  style="width: 600px; display: inline-block"
+                  style="width: 960px; display: inline-block"
                 />
-                <p style="width: 100%; font-size: 32px">
+                <p style="width: 100%; font-size: 32px" v-if="Math.random() > 0.5">
                   {{ steps[currentStep].name }}
                 </p>
               </a-space>
             </div>
           </a-col>
           <a-col :flex="4">
-            <a-space direction="vertical" :size="8">
+            <a-space direction="vertical" align="end" :size="8">
               <div class="input-block">
-                <a-space direction="vertical" align="start" :size="8">
+                <a-space
+                  direction="vertical"
+                  align="end"
+                  :size="8"
+                  style="width: 960px"
+                >
                   <a-typography-title :level="3" style="width: 100%"
                     >图片命名</a-typography-title
                   >
@@ -80,7 +85,12 @@
               </div>
 
               <div class="input-block">
-                <a-space direction="vertical" align="start" :size="8">
+                <a-space
+                  direction="vertical"
+                  align="end"
+                  :size="8"
+                  style="width: 960px"
+                >
                   <!-- <span style="margin-left: 8px">
                     <a-typography-title>
                       {{ `Selected ${selectedRowKeys} items` }}
@@ -96,67 +106,55 @@
                     v-model:value="steps[currentStep].response"
                     placeholder="输入患者生成的语义特征, 用回车键分隔"
                     :auto-size="{ minRows: 5, maxRows: 20 }"
-                    style="width:640px"
+                    style="width: 640px"
                   />
                   <a-typography-title
                     :level="5"
                     style="width: 100%; margin-top: 20px"
                     >语义特征识认</a-typography-title
                   >
-                  <a-tabs v-model:activeKey="activeKey" tabPosition="left">
+                  <a-tabs v-model:activeKey="activeKey" tabPosition="right">
                     <a-tab-pane key="1" tab="是" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[1].dataSource"
                         :columns="columns"
-                        :row-selection="{
-                          selectedRowKeys: selectedRowKeys,
-                          onChange: onSelectChange,
-                        }"
+                        :row-selection="rowSelection"
+                        :custom-row="customRow"
                     /></a-tab-pane>
                     <a-tab-pane key="2" tab="有" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[5].dataSource"
                         :columns="columns"
-                        :row-selection="{
-                          selectedRowKeys: selectedRowKeys,
-                          onChange: onSelectChange,
-                        }"
+                        :row-selection="rowSelection"
+                        :custom-row="customRow"
                     /></a-tab-pane>
                     <a-tab-pane key="3" tab="可以" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[0].dataSource"
                         :columns="columns"
-                        :row-selection="{
-                          selectedRowKeys: selectedRowKeys,
-                          onChange: onSelectChange,
-                        }"
+                        :row-selection="rowSelection"
+                        :custom-row="customRow"
                     /></a-tab-pane>
                     <a-tab-pane key="4" tab="需要" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[3].dataSource"
                         :columns="columns"
-                        :row-selection="{
-                          selectedRowKeys: selectedRowKeys,
-                          onChange: onSelectChange,
-                        }"
+                        :row-selection="rowSelection"
+                        :custom-row="customRow"
                     /></a-tab-pane>
                     <a-tab-pane key="5" tab="像" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[4].dataSource"
                         :columns="columns"
-                        :row-selection="{
-                          selectedRowKeys: selectedRowKeys,
-                          onChange: onSelectChange,
-                        }"
+                        :row-selection="rowSelection"
+                        :custom-row="customRow"
                     /></a-tab-pane>
                     <a-tab-pane key="6" tab="其他" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[2].dataSource"
                         :columns="columns"
-                        :row-selection="{
-                          selectedRowKeys: selectedRowKeys,
-                          onChange: onSelectChange,
-                        }"
+                        :row-selection="rowSelection"
+                        :custom-row="customRow"
                     /></a-tab-pane>
                   </a-tabs>
                 </a-space>
@@ -175,7 +173,7 @@
 //import HelloWorld from './components/HelloWorld.vue'
 const { ipcRenderer } = require("electron");
 
-import { defineComponent, reactive, ref, toRefs } from "vue";
+import { defineComponent, reactive, ref, toRefs, computed } from "vue";
 
 export default defineComponent({
   name: "App",
@@ -189,6 +187,31 @@ export default defineComponent({
       // Check here to configure the default column
       loading: false,
     });
+
+    const selectRow = (record) => {
+      const selectedRowKeys = [...state.selectedRowKeys];
+      if (selectedRowKeys.indexOf(record.key) >= 0) {
+        selectedRowKeys.splice(selectedRowKeys.indexOf(record.key), 1);
+      } else {
+        selectedRowKeys.push(record.key);
+      }
+      state.selectedRowKeys = selectedRowKeys;
+    };
+    const rowSelection = computed(() => {
+      return {
+        selectedRowKeys: state.selectedRowKeys,
+        onChange: (selectedRowKeys) => {
+          state.selectedRowKeys = selectedRowKeys;
+        },
+      };
+    });
+    const customRow = (record) => {
+      return {
+        onClick: () => {
+          selectRow(record);
+        },
+      };
+    };
 
     // const hasSelected = state.selectedRowKeys;
 
@@ -211,16 +234,17 @@ export default defineComponent({
     //   },
     // };
 
-    const onSelectChange = (selectedRowKeys) => {
-      state.selectedRowKeys = selectedRowKeys;
-    };
+    // const onSelectChange = (selectedRowKeys) => {
+    //   state.selectedRowKeys = selectedRowKeys;
+    // };
 
     return {
       //   value1,
       ...toRefs(state),
       activeKey: ref("5"),
-      //   rowSelection,
-      onSelectChange,
+      customRow,
+      rowSelection,
+      //   onSelectChange,
       //   hasSelected,
     };
   },
@@ -236,6 +260,7 @@ export default defineComponent({
           title: "语义特征名称",
           dataIndex: "name",
           key: "name",
+          align: "right",
         },
         {
           title: "线索度",
@@ -243,21 +268,25 @@ export default defineComponent({
           key: "cue_validity",
           defaultSortOrder: "descend",
           sorter: (a, b) => a.cue_validity - b.cue_validity,
+          align: "right",
         },
         {
           title: "相关概念",
           dataIndex: "related_concepts",
           key: "related_concepts",
+          align: "right",
         },
         {
           title: "混淆特征",
           dataIndex: "confused_feature",
           key: "confused_feature",
+          align: "right",
         },
         // {
         //   title: "掌握状态",
         //   dataIndex: "status",
         //   key: "status",
+        // align:'right',
         // },
       ],
       steps: [],
