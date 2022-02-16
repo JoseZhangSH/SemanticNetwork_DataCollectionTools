@@ -49,25 +49,25 @@
                 minHeight: windowHeight + 'px',
               }"
             >
-              <a-space direction="vertical">
+              <a-space direction="vertical" align="start"  style="width: 95%">
                 <a-image
                   :src="steps[currentStep].image"
-                  style="width: 960px; display: inline-block"
+                  style="width: 640px; display: inline-block"
                 />
-                <p style="width: 100%; font-size: 32px" v-if="Math.random() > 0.5">
+                <p style="width: 100%; font-size: 32px" v-if="steps[currentStep].status=='checked'">
                   {{ steps[currentStep].name }}
                 </p>
               </a-space>
             </div>
           </a-col>
           <a-col :flex="4">
-            <a-space direction="vertical" align="end" :size="8">
+            <a-space direction="vertical" align="end" :size="8" style="width: 95%">
               <div class="input-block">
                 <a-space
                   direction="vertical"
                   align="end"
                   :size="8"
-                  style="width: 960px"
+                  style="width: 800px"
                 >
                   <a-typography-title :level="3" style="width: 100%"
                     >图片命名</a-typography-title
@@ -89,7 +89,7 @@
                   direction="vertical"
                   align="end"
                   :size="8"
-                  style="width: 960px"
+                  style="width: 800px"
                 >
                   <!-- <span style="margin-left: 8px">
                     <a-typography-title>
