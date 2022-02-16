@@ -4,6 +4,8 @@ import { app, protocol, BrowserWindow, ipcMain } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
+const path = require('path')
+
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
@@ -100,7 +102,8 @@ function registerLocalResourceProtocol() {
 
 const fs = require('fs')
 
-ipcMain.on('readFile', (event, path) => {
-  const content = fs.readFileSync(path);
+ipcMain.on('readFile', (event, url) => {
+  const content = fs.readFileSync(path.resolve(__dirname, url));
+  // console.log(process.env.BASE_URL);
   event.returnValue = content.toString();
 })

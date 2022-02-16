@@ -374,7 +374,7 @@ export default defineComponent({
   beforeMount() {
     const content = ipcRenderer.sendSync(
       "readFile",
-      "/Users/zhanghexin/aphasia_viz/src/assets/test_SFA.json"
+      "../public/test_SFA.json"
     );
     const obj = JSON.parse(content);
     obj.steps.forEach((element) => {
