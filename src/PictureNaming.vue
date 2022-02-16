@@ -1,14 +1,26 @@
 <template>
   <a-layout>
     <a-layout-header :style="{ background: '#fff', padding: 0 }">
-      <a-row type="flex">
-        <a-col :span="8">
+      <a-row type="flex" justify="space-between">
+        <a-col :span="4">
           <a-space>
-          <a-button @click="download" size="large">下载结果</a-button>
-          <a-button @click="countdown" size="large">开始倒计时</a-button>
+            <a-button @click="download" size="large">下载结果</a-button>
+
           </a-space>
+
         </a-col>
-        <a-col :span="8">
+                <a-col :span="4">
+            <div width="170px">
+            <a-progress
+              type="line"
+              :percent="Math.round(((currentStep + 1) / steps.length) * 100)"
+              :strokeWidth="10"
+            />
+          </div>
+
+        </a-col>
+
+        <a-col :span="4">
           <a-radio-group
             @change="steps[currentStep].status = 'checked'"
             v-model:value="steps[currentStep].result"
@@ -19,22 +31,24 @@
             <a-radio-button value="fail">失败</a-radio-button>
           </a-radio-group>
         </a-col>
-        <a-col :span="8">
+        <a-col :span="4">
           <a-space>
-          <a-button
-            type="default"
-            size="large"
-            @click="currentStep--"
-            :disabled="currentStep === 0"
-            >上一个概念</a-button
-          >
-          <a-button
-            type="primary"
-            size="large"
-            @click="next"
-            :disabled="currentStep === 2"
-            >下一个概念 {{ steps[currentStep].countdown }}</a-button
-          >
+            <a-button @click="countdown" size="large">开始倒计时</a-button>
+
+            <a-button
+              type="default"
+              size="large"
+              @click="currentStep--"
+              :disabled="currentStep === 0"
+              >上一个概念</a-button
+            >
+            <a-button
+              type="primary"
+              size="large"
+              @click="next"
+              :disabled="currentStep === 2"
+              >下一个概念 {{ steps[currentStep].countdown }}</a-button
+            >
           </a-space>
         </a-col>
       </a-row>
@@ -123,7 +137,7 @@ export default defineComponent({
               this.steps[this.currentStep].countdown--;
             } else if (this.steps[this.currentStep].countdown == 0) {
               this.steps[this.currentStep].status = "checked";
-              if(this.currentStep != 2){
+              if (this.currentStep != 2) {
                 this.currentStep++;
               }
             }
@@ -158,7 +172,6 @@ export default defineComponent({
       document.body.removeChild(element);
     },
   },
-
 
   beforeMount() {
     const content = ipcRenderer.sendSync(

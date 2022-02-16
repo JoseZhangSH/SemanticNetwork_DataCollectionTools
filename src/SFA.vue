@@ -5,9 +5,19 @@
         <a-col :span="4">
           <a-space>
             <a-button @click="download" size="large">下载结果</a-button>
-            <a-button @click="countdown" size="large">开始倒计时</a-button>
+            <!-- <a-button @click="countdown" size="large">开始倒计时</a-button> -->
           </a-space>
         </a-col>
+        <a-col :span="4">
+          <div width="170px">
+            <a-progress
+              type="line"
+              :percent="Math.round(((currentStep + 1) / steps.length) * 100)"
+              :strokeWidth="10"
+            />
+          </div>
+        </a-col>
+
         <a-col :span="4">
           <a-space>
             <a-button
@@ -22,8 +32,8 @@
               size="large"
               @click="next"
               :disabled="currentStep === 2"
-              >下一个概念 {{ steps[currentStep].countdown }}</a-button
-            >
+              >下一个概念
+            </a-button>
           </a-space>
         </a-col>
       </a-row>
@@ -54,7 +64,7 @@
             <a-space direction="vertical" :size="8">
               <div class="input-block">
                 <a-space direction="vertical" align="start" :size="8">
-                  <a-typography-title :level="4" style="width: 100%"
+                  <a-typography-title :level="3" style="width: 100%"
                     >图片命名</a-typography-title
                   >
                   <a-radio-group
@@ -71,51 +81,82 @@
 
               <div class="input-block">
                 <a-space direction="vertical" align="start" :size="8">
-                  <a-typography-title :level="4"
+                  <!-- <span style="margin-left: 8px">
+                    <a-typography-title>
+                      {{ `Selected ${selectedRowKeys} items` }}
+                    </a-typography-title>
+                  </span> -->
+                  <a-typography-title :level="3"
                     >语义特征分析</a-typography-title
+                  >
+                  <a-typography-title :level="5" style="width: 100%"
+                    >记录患者生成的语义特征</a-typography-title
                   >
                   <a-textarea
                     v-model:value="steps[currentStep].response"
-                    placeholder="输入患者生成的语义特征"
+                    placeholder="输入患者生成的语义特征, 用回车键分隔"
                     :auto-size="{ minRows: 5, maxRows: 20 }"
-                    style="width: 320px"
+                    style="width:640px"
                   />
-                  <a-tabs v-model:activeKey="activeKey" tabPosition='left'>
-                    <a-tab-pane key="1" tab="是" forceRender=true>
+                  <a-typography-title
+                    :level="5"
+                    style="width: 100%; margin-top: 20px"
+                    >语义特征识认</a-typography-title
+                  >
+                  <a-tabs v-model:activeKey="activeKey" tabPosition="left">
+                    <a-tab-pane key="1" tab="是" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[1].dataSource"
                         :columns="columns"
-                        :row-selection="rowSelection"
+                        :row-selection="{
+                          selectedRowKeys: selectedRowKeys,
+                          onChange: onSelectChange,
+                        }"
                     /></a-tab-pane>
-                    <a-tab-pane key="2" tab="有" forceRender=true>
+                    <a-tab-pane key="2" tab="有" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[5].dataSource"
                         :columns="columns"
-                        :row-selection="rowSelection"
+                        :row-selection="{
+                          selectedRowKeys: selectedRowKeys,
+                          onChange: onSelectChange,
+                        }"
                     /></a-tab-pane>
-                    <a-tab-pane key="3" tab="可以" forceRender=true>
+                    <a-tab-pane key="3" tab="可以" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[0].dataSource"
                         :columns="columns"
-                        :row-selection="rowSelection"
+                        :row-selection="{
+                          selectedRowKeys: selectedRowKeys,
+                          onChange: onSelectChange,
+                        }"
                     /></a-tab-pane>
-                    <a-tab-pane key="4" tab="需要" forceRender=true>
+                    <a-tab-pane key="4" tab="需要" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[3].dataSource"
                         :columns="columns"
-                        :row-selection="rowSelection"
+                        :row-selection="{
+                          selectedRowKeys: selectedRowKeys,
+                          onChange: onSelectChange,
+                        }"
                     /></a-tab-pane>
-                    <a-tab-pane key="5" tab="像" forceRender=true>
+                    <a-tab-pane key="5" tab="像" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[4].dataSource"
                         :columns="columns"
-                        :row-selection="rowSelection"
+                        :row-selection="{
+                          selectedRowKeys: selectedRowKeys,
+                          onChange: onSelectChange,
+                        }"
                     /></a-tab-pane>
-                    <a-tab-pane key="6" tab="其他" forceRender=true>
+                    <a-tab-pane key="6" tab="其他" force-render>
                       <a-table
                         :dataSource="steps[currentStep].tab[2].dataSource"
                         :columns="columns"
-                        :row-selection="rowSelection"
+                        :row-selection="{
+                          selectedRowKeys: selectedRowKeys,
+                          onChange: onSelectChange,
+                        }"
                     /></a-tab-pane>
                   </a-tabs>
                 </a-space>
@@ -134,49 +175,61 @@
 //import HelloWorld from './components/HelloWorld.vue'
 const { ipcRenderer } = require("electron");
 
-import { defineComponent, ref } from "vue";
+import { defineComponent, reactive, ref, toRefs } from "vue";
 
 export default defineComponent({
   name: "App",
   components: {},
   setup() {
-    const value1 = ref("fail");
+    // const value1 = ref("fail");
     // const activeKey = ref("3");
 
-    const rowSelection = {
-      onChange: (selectedRowKeys, selectedRows) => {
-        console.log(
-          `selectedRowKeys: ${selectedRowKeys}`,
-          "selectedRows: ",
-          selectedRows
-        );
-      },
-      onSelect: (selected, selectedRows) => {
-        if (selectedRows == true) {
-          this.steps[this.currentStep].dataSource[selected.key - 1].status =
-            "Yes";
-        } else {
-          this.steps[this.currentStep].dataSource[selected.key - 1].status =
-            "No";
-        }
+    const state = reactive({
+      selectedRowKeys: [],
+      // Check here to configure the default column
+      loading: false,
+    });
 
-        console.log(selected.key, selectedRows);
-      },
-      onSelectAll: (selected, selectedRows, changeRows) => {
-        console.log(selected, selectedRows, changeRows);
-      },
+    // const hasSelected = state.selectedRowKeys;
+
+    // const rowSelection = {
+    //   onChange: (selectedRowKeys, selectedRows) => {
+    //     console.log(
+    //       `selectedRowKeys: ${selectedRowKeys}`,
+    //       "selectedRows: ",
+    //       selectedRows
+    //     );
+    //   },
+    //   onSelect: (record, selected, selectedRows) => {
+    //     console.log(record, selected, selectedRows);
+    //     return {
+    //       selectedRows,
+    //     };
+    //   },
+    //   onSelectAll: (selected, selectedRows, changeRows) => {
+    //     console.log(selected, selectedRows, changeRows);
+    //   },
+    // };
+
+    const onSelectChange = (selectedRowKeys) => {
+      state.selectedRowKeys = selectedRowKeys;
     };
 
     return {
-      value1,
+      //   value1,
+      ...toRefs(state),
       activeKey: ref("5"),
-      rowSelection,
+      //   rowSelection,
+      onSelectChange,
+      //   hasSelected,
     };
   },
 
   data() {
     return {
       windowHeight: document.documentElement.clientHeight, //实时屏幕高度
+      windowWidth: document.documentElement.clientWidth, //实时屏幕高度
+
       currentStep: 0,
       columns: [
         {
@@ -210,6 +263,19 @@ export default defineComponent({
       steps: [],
     };
   },
+
+  watch: {
+    // rowSelection() {
+    //   console.log("good");
+    // },
+    windowHeight(val) {
+      console.log("实时屏幕高度：", val, this.windowHeight);
+    },
+    windowWidth(val) {
+      console.log("实时屏幕宽度：", val, this.windowWidth);
+    },
+  },
+
   methods: {
     countdown() {
       setInterval(() => {
@@ -240,9 +306,27 @@ export default defineComponent({
     },
 
     download() {
+      var d = new Date();
+      var year = String(d.getFullYear());
+      var month = String(d.getMonth() + 1);
+      var date = String(d.getDate());
+      var hour = String(d.getHours());
+      var minute = String(d.getMinutes());
+
       // credit: https://www.bitdegree.org/learn/javascript-download
-      let text = JSON.stringify(this.steps);
-      let filename = "data.json";
+      let text = JSON.stringify(this);
+      let filename =
+        "SFA_" +
+        year +
+        "-" +
+        month +
+        "-" +
+        date +
+        "-" +
+        hour +
+        "-" +
+        minute +
+        ".json";
       let element = document.createElement("a");
       element.setAttribute(
         "href",
@@ -266,11 +350,8 @@ export default defineComponent({
     const obj = JSON.parse(content);
     obj.steps.forEach((element) => {
       this.steps.push(element);
-      console.log(element);
+      //   console.log(element);
     });
-
-    // console.log(this.steps[this.currentStep].image);
-    // console.log(obj.currentStep);
   },
 
   mounted() {
@@ -280,12 +361,6 @@ export default defineComponent({
         this.windowHeight = window.fullHeight;
       })();
     };
-  },
-
-  watch: {
-    windowHeight(val) {
-      console.log("实时屏幕高度：", val, this.windowHeight);
-    },
   },
 });
 </script>
