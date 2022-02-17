@@ -46,7 +46,7 @@
               type="primary"
               size="large"
               @click="next"
-              :disabled="currentStep === 2"
+              :disabled="currentStep === (steps.length-1)"
               >下一个概念 {{ steps[currentStep].countdown }}</a-button
             >
           </a-space>
@@ -129,7 +129,7 @@ export default defineComponent({
     countdown() {
       setInterval(() => {
         if (this.steps[this.currentStep].status == "unchecked") {
-          if (this.currentStep <= 2) {
+          if (this.currentStep <= (this.steps.length-1)) {
             if (
               this.steps[this.currentStep].countdown > 0 &&
               this.steps[this.currentStep].countdown <= 20
@@ -137,7 +137,7 @@ export default defineComponent({
               this.steps[this.currentStep].countdown--;
             } else if (this.steps[this.currentStep].countdown == 0) {
               this.steps[this.currentStep].status = "checked";
-              if (this.currentStep != 2) {
+              if (this.currentStep != (this.steps.length-1)) {
                 this.currentStep++;
               }
             }
