@@ -1,4 +1,4 @@
-# aphasia_viz
+# Semantic Network Data Collection Tools
 
 ## Project setup
 ```
