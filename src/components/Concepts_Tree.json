@@ -1,0 +1,15 @@
+{
+    "steps": [{
+        "graph": {
+            "id": "root",
+            "label": "蕨菜",
+            "size":60,
+            "img": "/test_images/蕨菜.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["蔬菜", "水果", "树木"],
+            "是":["红色","黄色","绿色"]
+        }
+    }]
+}
