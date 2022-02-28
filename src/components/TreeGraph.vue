@@ -42,7 +42,7 @@ export default {
           // feature_type: child['feature_type'],
         };
         this.graph.addChild(data, "root");
-        
+
         if (this.checkStatus == "checked") {
           this.graph.setItemState(
             this.graph.findById("root"),
@@ -180,6 +180,15 @@ export default {
     graphdata: function () {
       // console.log('good');
       this.graph.changeData(this.graphdata);
+      if (this.checkStatus == "checked") {
+        this.graph.setItemState(
+          this.graph.findById("root"),
+          "unchecked",
+          false
+        );
+      } else {
+        this.graph.setItemState(this.graph.findById("root"), "unchecked", true);
+      }
     },
     checkStatus: function () {
       if (this.checkStatus == "checked") {

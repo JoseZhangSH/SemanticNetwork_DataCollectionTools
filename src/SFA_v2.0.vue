@@ -49,7 +49,15 @@
       </a-row>
     </a-layout-header>
   </a-layout>
-  <TreeGraph :graphdata="steps[currentStep].graph" :checkStatus=steps[currentStep].status ref="tree" />
+
+  <TreeGraph
+    :graphdata="steps[currentStep].graph"
+    :checkStatus="steps[currentStep].status"
+    ref="tree"
+  />
+  <a-typography-title :level="3" style="width: 100%"
+    >这个概念属于__？用于__？能够做__？有__特点？常出现在__？联想到__？</a-typography-title
+  >
   <Input
     :MENTION_DATA="steps[currentStep].mention"
     @enter-press="addChildren"
@@ -83,17 +91,16 @@ export default defineComponent({
   },
   methods: {
     next() {
-      if (this.steps[this.currentStep].status == "unchecked") {
-        this.steps[this.currentStep].status = "checked";
-        // this.steps[this.currentStep].result = "success";
-      }
+      // if (this.steps[this.currentStep].status == "unchecked") {
+      //   this.steps[this.currentStep].status = "checked";
+      //   // this.steps[this.currentStep].result = "success";
+      // }
       this.currentStep++;
     },
     check() {
       this.steps[this.currentStep].status = "checked";
       // console.log("checked");
       // this.$refs.tree.showLabel();
-      // }
     },
     addChildren(n) {
       this.$refs.tree.addChildren({ id: n, label: n });
