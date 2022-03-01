@@ -1,7 +1,5 @@
 module.exports = {
-    pluginOptions: {
-      electronBuilder: {
-        nodeIntegration: true
-      }
-    }
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/SemanticNetwork_DataCollectionTools/'
+    : '/'
 }
