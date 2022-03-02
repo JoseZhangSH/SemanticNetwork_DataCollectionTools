@@ -4,14 +4,19 @@
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
-            <a-input v-model:value="inputValue" @pressEnter="input">
-              <template #addonAfter>
-                <enter-outlined />
+            <a-input-search
+              v-model:value="inputValue"
+              placeholder="用键盘输入语义特征，按回车键提交"
+              size="large"
+              @search="input"
+            >
+              <template #enterButton>
+                <a-button type="primary"><enter-outlined /></a-button>
               </template>
-            </a-input>
+            </a-input-search>
           </a-col>
           <a-col :span="2">
-            <a-dropdown placement='topCenter'>
+            <a-dropdown placement="topCenter">
               <template #overlay>
                 <a-menu @click="handleMenuClick">
                   <a-menu-item
@@ -33,14 +38,19 @@
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
-            <a-input v-model:value="inputValue" @pressEnter="input">
-              <template #addonAfter>
-                <enter-outlined />
+            <a-input-search
+              v-model:value="inputValue"
+              placeholder="用键盘输入语义特征，按回车键提交"
+              size="large"
+              @search="input"
+            >
+              <template #enterButton>
+                <a-button type="primary"><enter-outlined /></a-button>
               </template>
-            </a-input>
+            </a-input-search>
           </a-col>
           <a-col :span="2">
-            <a-dropdown placement='topCenter'>
+            <a-dropdown placement="topCenter">
               <template #overlay>
                 <a-menu @click="handleMenuClick">
                   <a-menu-item
@@ -61,14 +71,19 @@
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
-            <a-input v-model:value="inputValue" @pressEnter="input">
-              <template #addonAfter>
-                <enter-outlined />
+            <a-input-search
+              v-model:value="inputValue"
+              placeholder="用键盘输入语义特征，按回车键提交"
+              size="large"
+              @search="input"
+            >
+              <template #enterButton>
+                <a-button  type="primary"><enter-outlined /></a-button>
               </template>
-            </a-input>
+            </a-input-search>
           </a-col>
           <a-col :span="2">
-            <a-dropdown placement='topCenter'>
+            <a-dropdown placement="topCenter">
               <template #overlay>
                 <a-menu @click="handleMenuClick">
                   <a-menu-item
@@ -89,14 +104,19 @@
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
-            <a-input v-model:value="inputValue" @pressEnter="input">
-              <template #addonAfter>
-                <enter-outlined />
+            <a-input-search
+              v-model:value="inputValue"
+              placeholder="用键盘输入语义特征，按回车键提交"
+              size="large"
+              @search="input"
+            >
+              <template #enterButton>
+                <a-button type="primary"><enter-outlined /></a-button>
               </template>
-            </a-input>
+            </a-input-search>
           </a-col>
           <a-col :span="2">
-            <a-dropdown placement='topCenter'>
+            <a-dropdown placement="topCenter">
               <template #overlay>
                 <a-menu @click="handleMenuClick">
                   <a-menu-item
@@ -117,14 +137,19 @@
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
-            <a-input v-model:value="inputValue" @pressEnter="input">
-              <template #addonAfter>
-                <enter-outlined />
+            <a-input-search
+              v-model:value="inputValue"
+              placeholder="用键盘输入语义特征，按回车键提交"
+              size="large"
+              @search="input"
+            >
+              <template #enterButton>
+                <a-button type="primary"><enter-outlined /></a-button>
               </template>
-            </a-input>
+            </a-input-search>
           </a-col>
           <a-col :span="2">
-            <a-dropdown placement='topCenter'>
+            <a-dropdown placement="topCenter">
               <template #overlay>
                 <a-menu @click="handleMenuClick">
                   <a-menu-item
@@ -145,14 +170,19 @@
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
-            <a-input v-model:value="inputValue" @pressEnter="input">
-              <template #addonAfter>
-                <enter-outlined />
+            <a-input-search
+              v-model:value="inputValue"
+              placeholder="用键盘输入语义特征，按回车键提交"
+              size="large"
+              @search="input"
+            >
+              <template #enterButton>
+                <a-button type="primary"><enter-outlined /></a-button>
               </template>
-            </a-input>
+            </a-input-search>
           </a-col>
           <a-col :span="2">
-            <a-dropdown placement='topCenter'>
+            <a-dropdown placement="topCenter">
               <template #overlay>
                 <a-menu @click="handleMenuClick">
                   <a-menu-item
@@ -173,14 +203,19 @@
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
-            <a-input v-model:value="inputValue" @pressEnter="input">
-              <template #addonAfter>
-                <enter-outlined />
+            <a-input-search
+              v-model:value="inputValue"
+              placeholder="用键盘输入语义特征，按回车键提交"
+              size="large"
+              @search="input"
+            >
+              <template #enterButton>
+                <a-button type="primary"><enter-outlined /></a-button>
               </template>
-            </a-input>
+            </a-input-search>
           </a-col>
           <a-col :span="2">
-            <a-dropdown placement='topCenter'>
+            <a-dropdown placement="topCenter">
               <template #overlay>
                 <a-menu @click="handleMenuClick">
                   <a-menu-item
@@ -227,11 +262,17 @@ export default defineComponent({
   methods: {
     // work around for key enter event with mention component https://github.com/ant-design/ant-design/issues/7430
     input() {
-      let childData = {
-        rel: this.activeKey,
-        node: this.inputValue.replace(/(?:\r\n|\r|\n)/g),
-      };
-      this.$emit("enterPress", childData, "");
+      if (this.inputValue != "") {
+        let childData = {
+          rel: this.activeKey,
+          node: this.inputValue.replace(/(?:\r\n|\r|\n)/g),
+        };
+        this.$emit("enterPress", childData, "");
+        this.inputValue = "";
+      }
+    },
+    inputInitialize() {
+      this.activeKey = "属于";
       this.inputValue = "";
     },
 
@@ -255,5 +296,6 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 </style>

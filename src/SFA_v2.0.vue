@@ -1,6 +1,14 @@
 <template>
   <a-layout>
-    <a-layout-header :style="{ background: '#fff', padding: 0 }">
+    <a-layout-header
+      :style="{
+        position: 'fixed',
+        zIndex: 1,
+        width: '100%',
+        background: '#fff',
+        padding: 10,
+      }"
+    >
       <a-row type="flex" justify="space-between">
         <a-col :span="4">
           <a-space>
@@ -8,7 +16,7 @@
           </a-space>
         </a-col>
         <a-col :span="4">
-          <div width="170px">
+          <div width="150px">
             <a-progress
               type="line"
               :percent="Math.round(((currentStep + 1) / steps.length) * 100)"
@@ -24,6 +32,7 @@
             button-style="solid"
             size="large"
           >
+          <text>命名结果  </text>
             <a-radio-button value="success">成功</a-radio-button>
             <a-radio-button value="fail">失败</a-radio-button>
           </a-radio-group>
@@ -33,7 +42,7 @@
             <a-button
               type="default"
               size="large"
-              @click="currentStep--"
+              @click="last"
               :disabled="currentStep === 0"
               >上一个概念</a-button
             >
@@ -61,6 +70,7 @@
   <Input
     :MENTION_DATA="steps[currentStep].mention"
     @enter-press="addChildren"
+    ref="input"
   />
 </template>
 
@@ -96,6 +106,11 @@ export default defineComponent({
       //   // this.steps[this.currentStep].result = "success";
       // }
       this.currentStep++;
+      this.$refs.input.inputInitialize();
+    },
+    last() {
+      this.currentStep--;
+      this.$refs.input.inputInitialize();
     },
     check() {
       this.steps[this.currentStep].status = "checked";
@@ -103,7 +118,11 @@ export default defineComponent({
       // this.$refs.tree.showLabel();
     },
     addChildren(n) {
-      this.$refs.tree.addChildren({ id: n.node, label: n.node, feature_type: n.rel });
+      this.$refs.tree.addChildren({
+        id: n.node,
+        label: n.node,
+        feature_type: n.rel,
+      });
       // this.value = "";
     },
     download() {
@@ -157,6 +176,6 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 </style>

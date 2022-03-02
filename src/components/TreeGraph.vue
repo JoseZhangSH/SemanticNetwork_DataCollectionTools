@@ -1,7 +1,7 @@
 <template>
   <div
     id="container"
-    :style="{ width: '100%', height: '800px', background: '#F0F2F5' }"
+    :style="{ width: '100%', height: '700px', background: '#F0F2F5' }"
   ></div>
 </template>
 
