@@ -1,7 +1,7 @@
 <template>
   <div
     id="container"
-    :style="{ width: '100%', height: '800px', background: '#fff' }"
+    :style="{ width: '100%', height: '800px', background: '#F0F2F5' }"
   ></div>
 </template>
 
@@ -16,16 +16,16 @@ export default {
     graphdata: Object,
     checkStatus: String,
   },
-  setup(props, context) {
-    // Attribute (非响应式对象)
-    console.log(context.attrs);
+  // setup(props, context) {
+  //   // Attribute (非响应式对象)
+  //   console.log(context.attrs);
 
-    // 插槽 (非响应式对象)
-    console.log(context.slots);
+  //   // 插槽 (非响应式对象)
+  //   console.log(context.slots);
 
-    // 触发事件 (方法)
-    console.log(context.emit);
-  },
+  //   // 触发事件 (方法)
+  //   console.log(context.emit);
+  // },
 
   mounted() {
     this.drawGraph();
@@ -39,7 +39,7 @@ export default {
         const data = {
           id: child["id"],
           label: child["label"],
-          // feature_type: child['feature_type'],
+          feature_type: child["feature_type"],
         };
         this.graph.addChild(data, "root");
 
@@ -70,19 +70,17 @@ export default {
       const container = document.getElementById("container");
 
       // TO DO
-      // root node as image with text, leaf node as text
-      // link with text label
       // node text editing
-      // add new node
 
       if (container) {
-        const width = container.clientWidth * 0.6;
+        const width = container.clientWidth * 0.8;
         const height = container.clientHeight;
         const graph = new G6.TreeGraph({
           container: container,
           width: width,
           height: height,
           fitView: true,
+          fitViewPadding: [ 40, 40, 40, 40 ],
           // modes: { default: ["drag-canvas", "zoom-canvas"] },
 
           defaultEdge: {
@@ -92,8 +90,14 @@ export default {
             },
           },
           layout: {
-            type: "mindmap",
-            direction: "LR",
+            type: "compactBox",
+            direction: "H",
+            getSide: (node) => {
+              let arr = ["属于", "用于", "做"];
+              // console.log(node.data.feature_type)
+              if (arr.indexOf(node.data.feature_type) >= 0) return "left";
+              return "right";
+            },
             // getHeight: () => {
             //   return 16;
             // },
@@ -103,10 +107,10 @@ export default {
             // //     : Util.getTextSize(node.label, 12)[0];
             // // },
             getVGap: () => {
-              return 5;
+              return 8;
             },
             getHGap: () => {
-              return container.clientWidth * 0.05;
+              return 80;
             },
             // getSide: (node) => {
             //   return node.data.direction;
@@ -141,7 +145,7 @@ export default {
               id: node.id,
               type: "rect",
               style: {
-                fill: "#e6f7ff",
+                fill: "#fff",
                 stroke: "#0050b3",
                 lineWidth: 2,
                 radius: 8,
@@ -156,17 +160,24 @@ export default {
           }
         });
 
-        // graph.edge(function (edge) {
-        //   // console.log(graph.findDataById(edge.target).feature_type);
+        graph.edge(function (edge) {
+          // console.log(graph.findDataById(edge.target).feature_type);
 
-        //   return {
-        //     type: "cubic-horizontal",
-        //     label: graph.findDataById(edge.target).feature_type,
-        //     style: {
-        //       lineWidth: 2,
-        //     },
-        //   };
-        // });
+          return {
+            type: "cubic-horizontal",
+            label: graph.findDataById(edge.target).feature_type,
+            style: {
+              lineWidth: 2,
+            },
+            labelCfg: {
+              style: {
+                fontSize: 8,
+                fill: "#666",
+                fontFamily: "Helvetica",
+              },
+            },
+          };
+        });
 
         graph.data(this.graphdata);
         graph.render();

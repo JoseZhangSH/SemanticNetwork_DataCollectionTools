@@ -1,72 +1,246 @@
 <template>
-    <a-form layout="horizontal" >
-      <a-form-item
-        label="记录语义特征"
-        :label-col="{ span: 8 }"
-        :wrapper-col="{ span: 8 }"
-        name="记录语义特征"
-        v-bind="inputValue"
-       
-      >
-        <div @keyup.enter="enterPress">
-          <a-mentions
-            rows="1"
-            placement="top"
-            v-model:value="value"
-            placeholder="请输入以 属于 | 用于 | 做 | 有 | 在 | 联想到 开头的语义特征 "
-            :prefix="['属于', '用于', '做', '有', '在', '联想到']"
-            @search="onSearch"
-          >
-            <a-mentions-option
-              v-for="value in options"
-              :key="value"
-              :value="value"
-            >
-              {{ value }}
-            </a-mentions-option>
-          </a-mentions>
-        </div>
-      </a-form-item>
-    </a-form>
+  <a-tabs v-model:activeKey="activeKey" tabPosition="top">
+    <a-tab-pane key="属于" tab="属于" force-render>
+      <a-input-group size="large">
+        <a-row :gutter="8" justify="center">
+          <a-col :span="8">
+            <a-input v-model:value="inputValue" @pressEnter="input">
+              <template #addonAfter>
+                <enter-outlined />
+              </template>
+            </a-input>
+          </a-col>
+          <a-col :span="2">
+            <a-dropdown placement='topCenter'>
+              <template #overlay>
+                <a-menu @click="handleMenuClick">
+                  <a-menu-item
+                    v-for="item in MENTION_DATA['属于']"
+                    v-bind:key="item"
+                  >
+                    {{ item }}
+                  </a-menu-item>
+                </a-menu>
+              </template>
+              <a-button size="large"> 备选项 </a-button>
+            </a-dropdown>
+          </a-col>
+        </a-row>
+      </a-input-group>
+    </a-tab-pane>
+
+    <a-tab-pane key="用于" tab="用于" force-render>
+      <a-input-group size="large">
+        <a-row :gutter="8" justify="center">
+          <a-col :span="8">
+            <a-input v-model:value="inputValue" @pressEnter="input">
+              <template #addonAfter>
+                <enter-outlined />
+              </template>
+            </a-input>
+          </a-col>
+          <a-col :span="2">
+            <a-dropdown placement='topCenter'>
+              <template #overlay>
+                <a-menu @click="handleMenuClick">
+                  <a-menu-item
+                    v-for="item in MENTION_DATA['用于']"
+                    v-bind:key="item"
+                  >
+                    {{ item }}
+                  </a-menu-item>
+                </a-menu>
+              </template>
+              <a-button size="large"> 备选项 </a-button>
+            </a-dropdown>
+          </a-col>
+        </a-row>
+      </a-input-group>
+    </a-tab-pane>
+    <a-tab-pane key="做" tab="做" force-render>
+      <a-input-group size="large">
+        <a-row :gutter="8" justify="center">
+          <a-col :span="8">
+            <a-input v-model:value="inputValue" @pressEnter="input">
+              <template #addonAfter>
+                <enter-outlined />
+              </template>
+            </a-input>
+          </a-col>
+          <a-col :span="2">
+            <a-dropdown placement='topCenter'>
+              <template #overlay>
+                <a-menu @click="handleMenuClick">
+                  <a-menu-item
+                    v-for="item in MENTION_DATA['做']"
+                    v-bind:key="item"
+                  >
+                    {{ item }}
+                  </a-menu-item>
+                </a-menu>
+              </template>
+              <a-button size="large"> 备选项 </a-button>
+            </a-dropdown>
+          </a-col>
+        </a-row>
+      </a-input-group>
+    </a-tab-pane>
+    <a-tab-pane key="有" tab="有" force-render>
+      <a-input-group size="large">
+        <a-row :gutter="8" justify="center">
+          <a-col :span="8">
+            <a-input v-model:value="inputValue" @pressEnter="input">
+              <template #addonAfter>
+                <enter-outlined />
+              </template>
+            </a-input>
+          </a-col>
+          <a-col :span="2">
+            <a-dropdown placement='topCenter'>
+              <template #overlay>
+                <a-menu @click="handleMenuClick">
+                  <a-menu-item
+                    v-for="item in MENTION_DATA['有']"
+                    v-bind:key="item"
+                  >
+                    {{ item }}
+                  </a-menu-item>
+                </a-menu>
+              </template>
+              <a-button size="large"> 备选项 </a-button>
+            </a-dropdown>
+          </a-col>
+        </a-row>
+      </a-input-group>
+    </a-tab-pane>
+    <a-tab-pane key="在" tab="在哪里" force-render>
+      <a-input-group size="large">
+        <a-row :gutter="8" justify="center">
+          <a-col :span="8">
+            <a-input v-model:value="inputValue" @pressEnter="input">
+              <template #addonAfter>
+                <enter-outlined />
+              </template>
+            </a-input>
+          </a-col>
+          <a-col :span="2">
+            <a-dropdown placement='topCenter'>
+              <template #overlay>
+                <a-menu @click="handleMenuClick">
+                  <a-menu-item
+                    v-for="item in MENTION_DATA['在']"
+                    v-bind:key="item"
+                  >
+                    {{ item }}
+                  </a-menu-item>
+                </a-menu>
+              </template>
+              <a-button size="large"> 备选项 </a-button>
+            </a-dropdown>
+          </a-col>
+        </a-row>
+      </a-input-group></a-tab-pane
+    >
+    <a-tab-pane key="联想到" tab="联想到" force-render>
+      <a-input-group size="large">
+        <a-row :gutter="8" justify="center">
+          <a-col :span="8">
+            <a-input v-model:value="inputValue" @pressEnter="input">
+              <template #addonAfter>
+                <enter-outlined />
+              </template>
+            </a-input>
+          </a-col>
+          <a-col :span="2">
+            <a-dropdown placement='topCenter'>
+              <template #overlay>
+                <a-menu @click="handleMenuClick">
+                  <a-menu-item
+                    v-for="item in MENTION_DATA['联想到']"
+                    v-bind:key="item"
+                  >
+                    {{ item }}
+                  </a-menu-item>
+                </a-menu>
+              </template>
+              <a-button size="large"> 备选项 </a-button>
+            </a-dropdown>
+          </a-col>
+        </a-row>
+      </a-input-group>
+    </a-tab-pane>
+    <a-tab-pane key="其他" tab="其他" force-render>
+      <a-input-group size="large">
+        <a-row :gutter="8" justify="center">
+          <a-col :span="8">
+            <a-input v-model:value="inputValue" @pressEnter="input">
+              <template #addonAfter>
+                <enter-outlined />
+              </template>
+            </a-input>
+          </a-col>
+          <a-col :span="2">
+            <a-dropdown placement='topCenter'>
+              <template #overlay>
+                <a-menu @click="handleMenuClick">
+                  <a-menu-item
+                    v-for="item in MENTION_DATA['其他']"
+                    v-bind:key="item"
+                  >
+                    {{ item }}
+                  </a-menu-item>
+                </a-menu>
+              </template>
+              <a-button size="large"> 备选项 </a-button>
+            </a-dropdown>
+          </a-col>
+        </a-row>
+      </a-input-group></a-tab-pane
+    >
+  </a-tabs>
 </template>
 
 
 <script>
-// const { ipcRenderer } = require("electron");
-import { computed, defineComponent, ref } from "vue";
+import { defineComponent, ref } from "vue";
+import { EnterOutlined } from "@ant-design/icons-vue";
 
 export default defineComponent({
   name: "App",
   props: {
     MENTION_DATA: Object,
   },
-  setup(props) {
-    // console.log(props.MENTION_DATA);
-    const prefix = ref("属于");
-    const value = ref("");
+  components: {
+    EnterOutlined,
+  },
+  setup() {
+    const activeKey = ref("属于");
     const inputValue = ref("");
 
-    const options = computed(() => {
-      return props.MENTION_DATA[prefix.value] || [];
-    });
-    const onSearch = (_, val) => {
-      prefix.value = val;
-    };
-
     return {
+      activeKey,
       inputValue,
-      value,
-      options,
-      onSearch,
+      // handleMenuClick,
     };
   },
 
   methods: {
     // work around for key enter event with mention component https://github.com/ant-design/ant-design/issues/7430
-    enterPress() {
-      // console.log("enterPress");
-      this.$emit("enterPress", this.value.replace(/(?:\r\n|\r|\n)/g, ""));
-      this.value = "";
+    input() {
+      let childData = {
+        rel: this.activeKey,
+        node: this.inputValue.replace(/(?:\r\n|\r|\n)/g),
+      };
+      this.$emit("enterPress", childData, "");
+      this.inputValue = "";
+    },
+
+    handleMenuClick(e) {
+      let childData = {
+        rel: this.activeKey,
+        node: e.key,
+      };
+      this.$emit("enterPress", childData, "");
     },
   },
   mounted() {},
