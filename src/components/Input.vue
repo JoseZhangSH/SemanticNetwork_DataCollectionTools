@@ -1,6 +1,6 @@
 <template>
-  <a-tabs v-model:activeKey="activeKey" tabPosition="top">
-    <a-tab-pane key="属于" tab="属于" force-render>
+  <a-tabs v-model:activeKey="activeKey" tabPosition="top" :animated=false>
+    <a-tab-pane key="属于" tab="范畴（属于什么类别）" force-render>
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
@@ -34,7 +34,7 @@
       </a-input-group>
     </a-tab-pane>
 
-    <a-tab-pane key="用于" tab="用于" force-render>
+    <a-tab-pane key="用于" tab="用途（常用于干什么）" force-render>
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
@@ -67,7 +67,7 @@
         </a-row>
       </a-input-group>
     </a-tab-pane>
-    <a-tab-pane key="做" tab="做" force-render>
+    <a-tab-pane key="做" tab="动作（能做什么动作）" force-render>
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
@@ -100,7 +100,7 @@
         </a-row>
       </a-input-group>
     </a-tab-pane>
-    <a-tab-pane key="有" tab="有" force-render>
+    <a-tab-pane key="有" tab="属性（有什么特点）" force-render>
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
@@ -133,7 +133,7 @@
         </a-row>
       </a-input-group>
     </a-tab-pane>
-    <a-tab-pane key="在" tab="在哪里" force-render>
+    <a-tab-pane key="在" tab="场所（常在哪里见到）" force-render>
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
@@ -166,7 +166,7 @@
         </a-row>
       </a-input-group></a-tab-pane
     >
-    <a-tab-pane key="联想到" tab="联想到" force-render>
+    <a-tab-pane key="联想到" tab="联想（联想到什么）" force-render>
       <a-input-group size="large">
         <a-row :gutter="8" justify="center">
           <a-col :span="8">
@@ -199,39 +199,6 @@
         </a-row>
       </a-input-group>
     </a-tab-pane>
-    <a-tab-pane key="其他" tab="其他" force-render>
-      <a-input-group size="large">
-        <a-row :gutter="8" justify="center">
-          <a-col :span="8">
-            <a-input-search
-              v-model:value="inputValue"
-              placeholder="用键盘输入语义特征，按回车键提交"
-              size="large"
-              @search="input"
-            >
-              <template #enterButton>
-                <a-button type="primary"><enter-outlined /></a-button>
-              </template>
-            </a-input-search>
-          </a-col>
-          <a-col :span="2">
-            <a-dropdown placement="topCenter">
-              <template #overlay>
-                <a-menu @click="handleMenuClick">
-                  <a-menu-item
-                    v-for="item in MENTION_DATA['其他']"
-                    v-bind:key="item"
-                  >
-                    {{ item }}
-                  </a-menu-item>
-                </a-menu>
-              </template>
-              <a-button size="large"> 备选项 </a-button>
-            </a-dropdown>
-          </a-col>
-        </a-row>
-      </a-input-group></a-tab-pane
-    >
   </a-tabs>
 </template>
 
@@ -298,4 +265,6 @@ export default defineComponent({
   margin-top: 60px;
   margin-bottom: 60px;
 }
+
+
 </style>
