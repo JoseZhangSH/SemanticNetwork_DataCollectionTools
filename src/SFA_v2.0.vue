@@ -32,7 +32,7 @@
             button-style="solid"
             size="large"
           >
-          <text>命名结果  </text>
+            <text>命名结果 </text>
             <a-radio-button value="success">成功</a-radio-button>
             <a-radio-button value="fail">失败</a-radio-button>
           </a-radio-group>

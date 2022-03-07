@@ -7,8 +7,7 @@
 
 <script>
 import G6 from "@antv/g6";
-// const graph;
-// import Util from "@antv/g6";
+
 
 export default {
   name: "TreeGraph",
@@ -16,16 +15,7 @@ export default {
     graphdata: Object,
     checkStatus: String,
   },
-  // setup(props, context) {
-  //   // Attribute (非响应式对象)
-  //   console.log(context.attrs);
 
-  //   // 插槽 (非响应式对象)
-  //   console.log(context.slots);
-
-  //   // 触发事件 (方法)
-  //   console.log(context.emit);
-  // },
 
   mounted() {
     this.drawGraph();
