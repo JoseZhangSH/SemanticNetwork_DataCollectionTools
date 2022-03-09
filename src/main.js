@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
-import App from './SFA_v2.0.vue';
-// import App from './PictureNaming.vue';
+// import App from './SFA_v2.0.vue';
+import App from './PictureNaming.vue';
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 

@@ -64,9 +64,6 @@
     :checkStatus="steps[currentStep].status"
     ref="tree"
   />
-  <!-- <a-typography-title :level="3" style="width: 100%"
-    >这个概念属于__？用于__？能够做__？有__特点？常出现在__？联想到__？</a-typography-title
-  > -->
   <Input
     :MENTION_DATA="steps[currentStep].mention"
     @enter-press="addChildren"

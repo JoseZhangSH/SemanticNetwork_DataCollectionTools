@@ -1,1 +1,156 @@
-{"steps": [{"result": "", "status": "unchecked", "graph": {"id": "root", "label": "轿车", "img": "/SemanticNetwork_DataCollectionTools/test_images/轿车.jpeg", "children": []}, "mention": {"属于": ["车", "船", "飞机"], "用于": ["移动", "驾驶", "跑", "出行"], "做": ["修理", "动力", "制造", "牌照"], "有": ["多种种类", "驾驶室", "多种样式", "四个车轮"], "在": [], "联想到": ["货车", "拖拉机", "火车", "面包车"]}}, {"result": "", "status": "unchecked", "graph": {"id": "root", "label": "摩托车", "img": "/SemanticNetwork_DataCollectionTools/test_images/摩托车.jpeg", "children": []}, "mention": {"属于": ["车", "船", "飞机"], "用于": ["行驶", "乘坐", "开", "骑"], "做": ["司机", "维护", "修理", "加油"], "有": ["方向盘", "车身", "车厢", "仪表盘"], "在": [], "联想到": ["房屋", "货车", "轿车", "电动车"]}}, {"result": "", "status": "unchecked", "graph": {"id": "root", "label": "消防车", "img": "/SemanticNetwork_DataCollectionTools/test_images/消防车.jpeg", "children": []}, "mention": {"属于": ["车", "船", "飞机"], "用于": ["行驶", "乘坐", "买卖", "救灾"], "做": ["制造", "电", "清洗", "消防员"], "有": ["车身", "车厢", "窗户", "水带"], "在": [], "联想到": ["房屋", "轿车", "拖拉机", "救护车"]}}, {"result": "", "status": "unchecked", "graph": {"id": "root", "label": "消防栓", "img": "/SemanticNetwork_DataCollectionTools/test_images/消防栓.jpeg", "children": []}, "mention": {"属于": ["工具", "餐具", "电器"], "用于": ["买卖", "保护", "使用", "救火"], "做": ["制造", "清洗", "电", "打开开关"], "有": ["多种种类", "多种样式", "多种颜色", "灭火器"], "在": [], "联想到": ["棍棒", "箱子", "碗", "方向盘"]}}, {"result": "", "status": "unchecked", "graph": {"id": "root", "label": "水", "img": "/SemanticNetwork_DataCollectionTools/test_images/水.jpeg", "children": []}, "mention": {"属于": ["固态干粮", "酒水饮料", "调料"], "用于": ["买卖", "饱腹", "调味", "浇树"], "做": ["制造", "保存", "水", "珍惜"], "有": ["味道", "多种种类", "营养", "氧元素"], "在": [], "联想到": ["棍棒", "豆浆", "可乐", "酒精"]}}, {"result": "", "status": "unchecked", "graph": {"id": "root", "label": "冰红茶", "img": "/SemanticNetwork_DataCollectionTools/test_images/冰红茶.jpeg", "children": []}, "mention": {"属于": ["固态干粮", "酒水饮料", "调料"], "用于": ["饱腹", "调味", "送礼", "防止骨质疏松"], "做": ["制造", "煮", "冷藏", "冰冻"], "有": ["多种种类", "营养", "多种颜色", "红茶"], "在": [], "联想到": ["棍棒", "豆浆", "牛奶", "红茶"]}}, {"result": "", "status": "unchecked", "graph": {"id": "root", "label": "谷子", "img": "/SemanticNetwork_DataCollectionTools/test_images/谷子.jpeg", "children": []}, "mention": {"属于": ["固态干粮", "酒水饮料", "调料"], "用于": ["饱腹", "饮用", "解渴", "喂鸡"], "做": ["制造", "保存", "煮", "收割"], "有": ["味道", "糖", "多种味道", "谷穗"], "在": [], "联想到": ["石头", "沙", "棍棒", "麦子"]}}, {"result": "", "status": "unchecked", "graph": {"id": "root", "label": "薄荷", "img": "/SemanticNetwork_DataCollectionTools/test_images/薄荷.jpeg", "children": []}, "mention": {"属于": ["蔬菜", "水果", "树木"], "用于": ["买卖", "炒", "生长", "闻"], "做": ["肥料", "清洗", "剥开", "光"], "有": ["多种种类", "营养", "皮", "清凉的味道"], "在": [], "联想到": ["球", "草", "花", "树叶"]}}, {"result": "", "status": "unchecked", "graph": {"id": "root", "label": "白菜", "img": "/SemanticNetwork_DataCollectionTools/test_images/白菜.jpeg", "children": []}, "mention": {"属于": ["蔬菜", "水果", "树木"], "用于": ["观赏", "买卖", "生长", "腌制"], "做": ["采摘", "营养", "剥开", "杀虫"], "有": ["皮", "多种颜色", "果实", "白菜帮"], "在": [], "联想到": ["伞", "草", "石头", "胖娃娃"]}}]}
+{
+    "steps": [{
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "轿车",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/轿车.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["车", "船", "飞机"],
+            "用于": ["移动", "驾驶", "跑", "出行"],
+            "做": ["修理", "动力", "制造", "牌照"],
+            "有": ["多种种类", "驾驶室", "多种样式", "四个车轮"],
+            "在": [],
+            "联想到": ["货车", "拖拉机", "火车", "面包车"]
+        }
+    }, {
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "摩托车",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/摩托车.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["车", "船", "飞机"],
+            "用于": ["行驶", "乘坐", "开", "骑"],
+            "做": ["司机", "维护", "修理", "加油"],
+            "有": ["方向盘", "车身", "车厢", "仪表盘"],
+            "在": [],
+            "联想到": ["房屋", "货车", "轿车", "电动车"]
+        }
+    }, {
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "消防车",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/消防车.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["车", "船", "飞机"],
+            "用于": ["行驶", "乘坐", "买卖", "救灾"],
+            "做": ["制造", "电", "清洗", "消防员"],
+            "有": ["车身", "车厢", "窗户", "水带"],
+            "在": [],
+            "联想到": ["房屋", "轿车", "拖拉机", "救护车"]
+        }
+    }, {
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "消防栓",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/消防栓.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["工具", "餐具", "电器"],
+            "用于": ["买卖", "保护", "使用", "救火"],
+            "做": ["制造", "清洗", "电", "打开开关"],
+            "有": ["多种种类", "多种样式", "多种颜色", "灭火器"],
+            "在": [],
+            "联想到": ["棍棒", "箱子", "碗", "方向盘"]
+        }
+    }, {
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "水",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/水.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["固态干粮", "酒水饮料", "调料"],
+            "用于": ["买卖", "饱腹", "调味", "浇树"],
+            "做": ["制造", "保存", "水", "珍惜"],
+            "有": ["味道", "多种种类", "营养", "氧元素"],
+            "在": [],
+            "联想到": ["棍棒", "豆浆", "可乐", "酒精"]
+        }
+    }, {
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "冰红茶",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/冰红茶.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["固态干粮", "酒水饮料", "调料"],
+            "用于": ["饱腹", "调味", "送礼", "防止骨质疏松"],
+            "做": ["制造", "煮", "冷藏", "冰冻"],
+            "有": ["多种种类", "营养", "多种颜色", "红茶"],
+            "在": [],
+            "联想到": ["棍棒", "豆浆", "牛奶", "红茶"]
+        }
+    }, {
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "谷子",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/谷子.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["固态干粮", "酒水饮料", "调料"],
+            "用于": ["饱腹", "饮用", "解渴", "喂鸡"],
+            "做": ["制造", "保存", "煮", "收割"],
+            "有": ["味道", "糖", "多种味道", "谷穗"],
+            "在": [],
+            "联想到": ["石头", "沙", "棍棒", "麦子"]
+        }
+    }, {
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "薄荷",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/薄荷.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["蔬菜", "水果", "树木"],
+            "用于": ["买卖", "炒", "生长", "闻"],
+            "做": ["肥料", "清洗", "剥开", "光"],
+            "有": ["多种种类", "营养", "皮", "清凉的味道"],
+            "在": [],
+            "联想到": ["球", "草", "花", "树叶"]
+        }
+    }, {
+        "result": "",
+        "status": "unchecked",
+        "graph": {
+            "id": "root",
+            "label": "白菜",
+            "img": "/SemanticNetwork_DataCollectionTools/test_images/白菜.jpeg",
+            "children": []
+        },
+        "mention": {
+            "属于": ["蔬菜", "水果", "树木"],
+            "用于": ["观赏", "买卖", "生长", "腌制"],
+            "做": ["采摘", "营养", "剥开", "杀虫"],
+            "有": ["皮", "多种颜色", "果实", "白菜帮"],
+            "在": [],
+            "联想到": ["伞", "草", "石头", "胖娃娃"]
+        }
+    }]
+}
